@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Prairie Registry — Breeder Search</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; margin: 2rem; background: #eef5f2; }
+    #results { margin-top: 1.5rem; }
+    .breeder-card { display: block; margin: 0.6rem 0; padding: 0.6rem; background: #fff; border-left: 4px solid #2a7; }
+  </style>
+</head>
+<body>
+  <h1>Prairie Cattle Registry</h1>
+  <p>Breeder search (practice site B — search + different field names)</p>
+  <label>Farm keyword <input id="q" type="text" value="" /></label>
+  <button id="search-btn" type="button">Search</button>
+  <div id="results" hidden>
+    <a class="breeder-card" href="breeder1.html">ABC Ranch — Houston</a>
+    <a class="breeder-card" href="breeder2.html">Oak Valley Farm — Waco</a>
+    <a class="breeder-card" href="breeder3.html">Blue Creek Cattle — Lubbock</a>
+  </div>
+  <script>
+    document.getElementById("search-btn").addEventListener("click", () => {
+      document.getElementById("results").hidden = false;
+    });
+  </script>
+</body>
+</html>

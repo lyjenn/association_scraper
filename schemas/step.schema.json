@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scraper.local/schemas/step.schema.json",
+  "title": "ScrapingStep",
+  "type": "object",
+  "required": ["action", "phase"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string" },
+    "position": { "type": "integer", "minimum": 0 },
+    "action": {
+      "type": "string",
+      "enum": [
+        "navigate",
+        "find_records",
+        "click",
+        "wait",
+        "extract_label_value",
+        "extract_table",
+        "follow_link",
+        "next_page",
+        "save",
+        "fill",
+        "select"
+      ]
+    },
+    "phase": {
+      "type": "string",
+      "enum": ["discovery", "record"]
+    },
+    "locator_type": {
+      "type": ["string", "null"],
+      "enum": [
+        null,
+        "css",
+        "id",
+        "class",
+        "link_text",
+        "button_text",
+        "xpath"
+      ]
+    },
+    "locator_value": { "type": ["string", "null"] },
+    "enabled": { "type": "boolean", "default": true },
+    "params": {
+      "type": "object",
+      "default": {},
+      "additionalProperties": true
+    }
+  }
+}

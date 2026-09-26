@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ABC Ranch</title>
+  <style>
+    body { font-family: "Segoe UI", sans-serif; margin: 2rem; background: #eef5f2; }
+    section { background: #fff; padding: 1rem; margin: 1rem 0; }
+    dt { font-weight: bold; }
+    dd { margin: 0 0 0.5rem 0; }
+    button.more { margin-top: 0.5rem; }
+    #more-info { display: none; }
+    #more-info.open { display: block; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #888; padding: 0.35rem; }
+  </style>
+</head>
+<body>
+  <h1>ABC Ranch</h1>
+  <section class="breeder-info">
+    <h2>Breeder Information</h2>
+    <dl>
+      <dt>Member Number</dt><dd>89201</dd>
+      <dt>Farm Name</dt><dd>ABC Ranch</dd>
+      <dt>Owner</dt><dd>Casey Nguyen</dd>
+    </dl>
+  </section>
+  <section class="location">
+    <h2>Location</h2>
+    <dl>
+      <dt>City</dt><dd>Houston</dd>
+      <dt>State</dt><dd>Texas</dd>
+    </dl>
+  </section>
+  <button type="button" class="more" id="more-btn">More Information</button>
+  <section id="more-info">
+    <h2>Animals</h2>
+    <table class="animals-table">
+      <thead>
+        <tr><th>Registration</th><th>Sex</th><th>Color</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>123456</td><td>Bull</td><td>Black</td></tr>
+        <tr><td>123457</td><td>Cow</td><td>Red</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <script>
+    document.getElementById("more-btn").addEventListener("click", () => {
+      document.getElementById("more-info").classList.add("open");
+    });
+  </script>
+</body>
+</html>

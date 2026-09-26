@@ -1,0 +1,111 @@
+{
+  "name": "Sunrise Breeders Club",
+  "discovery": [
+    {
+      "action": "navigate",
+      "phase": "discovery",
+      "locator_type": null,
+      "locator_value": null,
+      "params": { "url": "{{start.url}}" }
+    },
+    {
+      "action": "find_records",
+      "phase": "discovery",
+      "locator_type": "css",
+      "locator_value": "a.member-link",
+      "params": { "url_attr": "href" }
+    }
+  ],
+  "record": [
+    {
+      "action": "navigate",
+      "phase": "record",
+      "params": { "url": "{{record.detail_url}}" }
+    },
+    {
+      "action": "extract_label_value",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "#general",
+      "params": {
+        "section": "General Profile Information",
+        "item_selector": "#general .field",
+        "label_selector": ".label",
+        "value_selector": ".value"
+      }
+    },
+    {
+      "action": "click",
+      "phase": "record",
+      "locator_type": "button_text",
+      "locator_value": "Addresses"
+    },
+    {
+      "action": "wait",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "#addresses.visible",
+      "params": { "timeout_ms": 5000 }
+    },
+    {
+      "action": "extract_label_value",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "#addresses",
+      "params": {
+        "section": "Addresses",
+        "item_selector": "#addresses .field",
+        "label_selector": ".label",
+        "value_selector": ".value"
+      }
+    },
+    {
+      "action": "click",
+      "phase": "record",
+      "locator_type": "button_text",
+      "locator_value": "Phones"
+    },
+    {
+      "action": "wait",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "#phones.visible"
+    },
+    {
+      "action": "extract_label_value",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "#phones",
+      "params": {
+        "section": "Phones",
+        "item_selector": "#phones .field",
+        "label_selector": ".label",
+        "value_selector": ".value"
+      }
+    },
+    {
+      "action": "click",
+      "phase": "record",
+      "locator_type": "button_text",
+      "locator_value": "Contacts"
+    },
+    {
+      "action": "wait",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "#contacts.visible"
+    },
+    {
+      "action": "extract_table",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "table.contacts-table",
+      "params": { "section": "Contacts" }
+    },
+    {
+      "action": "save",
+      "phase": "record",
+      "params": {}
+    }
+  ]
+}

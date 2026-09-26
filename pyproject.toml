@@ -1,0 +1,33 @@
+[project]
+name = "scraper-app"
+version = "0.1.0"
+description = "Desktop association scraper with per-association workflows, proxy rotation, and Supabase/SQLite storage"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "PySide6>=6.6",
+    "playwright>=1.40",
+    "supabase>=2.0",
+    "python-dotenv>=1.0",
+    "jsonschema>=4.20",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+scraper-app = "scraper_app.__main__:main"
+association-scraper = "scraper_app.__main__:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.uv]
+package = true

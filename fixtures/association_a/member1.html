@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Member — Reldon Bray</title>
+  <style>
+    body { font-family: Georgia, serif; margin: 2rem; background: #f7f3ea; }
+    .tabs button { margin-right: 0.5rem; padding: 0.4rem 0.8rem; }
+    .tabs button.active { background: #246; color: #fff; }
+    .panel { display: none; margin-top: 1rem; border-top: 1px solid #ccc; padding-top: 1rem; }
+    .panel.visible { display: block; }
+    .field { margin: 0.35rem 0; }
+    .label { font-weight: bold; display: inline-block; min-width: 12rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #999; padding: 0.4rem; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Reldon Bray</h1>
+  <div class="tabs">
+    <button type="button" class="tab active" data-tab="general">General</button>
+    <button type="button" class="tab" data-tab="addresses">Addresses</button>
+    <button type="button" class="tab" data-tab="phones">Phones</button>
+    <button type="button" class="tab" data-tab="contacts">Contacts</button>
+  </div>
+
+  <section id="general" class="panel visible">
+    <h2>General Profile Information</h2>
+    <div class="field"><span class="label">Profile Type</span><span class="value">Member</span></div>
+    <div class="field"><span class="label">Official Profile ID</span><span class="value">10179</span></div>
+    <div class="field"><span class="label">Official Profile Name</span><span class="value">RELDON BRAY</span></div>
+    <div class="field"><span class="label">Herd Prefix</span><span class="value">BRAY</span></div>
+  </section>
+
+  <section id="addresses" class="panel">
+    <h2>Addresses</h2>
+    <div class="field"><span class="label">Mailing Address</span><span class="value">12 Ranch Road, Austin, TX</span></div>
+    <div class="field"><span class="label">Farm Address</span><span class="value">Same as mailing</span></div>
+  </section>
+
+  <section id="phones" class="panel">
+    <h2>Phones</h2>
+    <div class="field"><span class="label">Primary Phone</span><span class="value">555-0100</span></div>
+    <div class="field"><span class="label">Mobile</span><span class="value">555-0101</span></div>
+  </section>
+
+  <section id="contacts" class="panel">
+    <h2>Contacts</h2>
+    <table class="contacts-table">
+      <thead>
+        <tr><th>Name</th><th>Nickname</th><th>Phone</th><th>Address</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reldon Bray</td>
+          <td>Primary</td>
+          <td>555-0100</td>
+          <td>12 Ranch Road</td>
+        </tr>
+        <tr>
+          <td>Sam Bray</td>
+          <td>Office</td>
+          <td>555-0199</td>
+          <td>12 Ranch Road</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <script>
+    document.querySelectorAll(".tab").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".panel").forEach((p) => p.classList.remove("visible"));
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("visible");
+      });
+    });
+  </script>
+</body>
+</html>

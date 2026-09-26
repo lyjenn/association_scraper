@@ -1,0 +1,81 @@
+{
+  "name": "Prairie Cattle Registry",
+  "discovery": [
+    {
+      "action": "navigate",
+      "phase": "discovery",
+      "params": { "url": "{{start.url}}" }
+    },
+    {
+      "action": "fill",
+      "phase": "discovery",
+      "locator_type": "css",
+      "locator_value": "#q",
+      "params": { "value": "ranch" }
+    },
+    {
+      "action": "click",
+      "phase": "discovery",
+      "locator_type": "css",
+      "locator_value": "#search-btn"
+    },
+    {
+      "action": "wait",
+      "phase": "discovery",
+      "locator_type": "css",
+      "locator_value": "#results:not([hidden])"
+    },
+    {
+      "action": "find_records",
+      "phase": "discovery",
+      "locator_type": "css",
+      "locator_value": "a.breeder-card",
+      "params": { "url_attr": "href" }
+    }
+  ],
+  "record": [
+    {
+      "action": "navigate",
+      "phase": "record",
+      "params": { "url": "{{record.detail_url}}" }
+    },
+    {
+      "action": "extract_label_value",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "section.breeder-info",
+      "params": { "section": "Breeder Information" }
+    },
+    {
+      "action": "extract_label_value",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "section.location",
+      "params": { "section": "Location" }
+    },
+    {
+      "action": "click",
+      "phase": "record",
+      "locator_type": "button_text",
+      "locator_value": "More Information"
+    },
+    {
+      "action": "wait",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "#more-info.open"
+    },
+    {
+      "action": "extract_table",
+      "phase": "record",
+      "locator_type": "css",
+      "locator_value": "table.animals-table",
+      "params": { "section": "Animals" }
+    },
+    {
+      "action": "save",
+      "phase": "record",
+      "params": {}
+    }
+  ]
+}
